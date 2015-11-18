@@ -7,11 +7,12 @@ public class DataCalculator {
     }
     
     private int getSize(String[] arr) {
-	int toReturn = 0;
-	for (int j = 0; j < arr.length; j++) {
-	    toReturn++;
-	}
-	return toReturn;
+	// int toReturn = 0;
+	// for (int j = 0; j < arr.length; j++) {
+	//     toReturn++;
+	// }
+	// return toReturn;
+    	return arr.length;
     }
     
     public int[] calculate(StrategyInterface strategy, String[] strings) {

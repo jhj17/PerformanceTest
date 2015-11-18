@@ -31,37 +31,39 @@ public class SomethingDoer {
     }
 
     public String[] convertToStringArray(Object[] objs) {
-	ArrayList<String> strings = getNewArrayList();
-	strings = clearOutArrayList(strings);
-	for (Object obj : objs) {
-	    String x = (String) obj;
-	    strings.add(x);
-	}
-	String[] toReturn = new String[strings.size()];
+		ArrayList<String> strings = getNewArrayList();
+		strings = clearOutArrayList(strings);
+		for (Object obj : objs) {
+		    String x = (String) obj;
+		    strings.add(x);
+		}
+		String[] toReturn = new String[strings.size()];
 
-	int count = 0;
-	for (String s : strings) {
-	    toReturn[count++] = s;
-	}
+		int count = 0;
+		for (String s : strings) {
+		    toReturn[count++] = s;
+		}
 	
-	return toReturn;
+		return toReturn;
     }
     
     public void doIt(FileName f) {
 	_fileName = f;
 	
-	ArrayList<String> strings = getNewArrayList();
+	ArrayList<String> strings = new ArrayList<String>();
 
-	strings = clearOutArrayList(strings);
+	//strings = clearOutArrayList(strings);
+	
 
 	FileAccess fa = new FileAccess();
 	strings = fa.readFile(f.name);
 
 	DataCalculator dc = new DataCalculator();
 
-	Object[] strings2 = strings.toArray();
+	String[] strings3 = new String[strings.size()];
+	strings3 = strings.toArray(strings3);
 
-	String[] strings3 = convertToStringArray(strings2);
+	//String[] strings3 = convertToStringArray(strings2);
 	
 	int[] calculated = dc.calculate((new StrategyOne()), strings3);
 

@@ -3,10 +3,17 @@ public class BillUtil {
     private static int offset = 0;
 
     public static int value() {
+
+    //System.out.println("OFFSET " + offset);
 	int toReturn = 0;
 	for (int j = 0; j < (++offset * 111); j++) {
 	    toReturn++;
 	}
+
+
+	//System.out.println("BillUtil HEEEERRREE " + toReturn);
+
+
 	return toReturn % 100;
     }
 
